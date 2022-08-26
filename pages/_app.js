@@ -29,7 +29,7 @@ function MyApp({ Component, pageProps }) {
 
   async function fetchBalance() {
     const bal = await bundlrRef.current.getLoadedBalance();
-    console.log("bal: ", utils.formatEther(bal.toString()));
+    console.log("balance: ", utils.formatEther(bal.toString()));
     setBalance(utils.formatEther(bal.toString()));
   }
 
