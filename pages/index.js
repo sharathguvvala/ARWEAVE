@@ -8,6 +8,11 @@ export default function Home() {
   const [URI, setURI] = useState()
   const [amount, setAmount] = useState()
   const { bundlrInstance, initialiseBundlr, balance, fetchBalance } = useContext(MainContext)
+
+  async function initialize() {
+    initialiseBundlr()
+  }
+
   return (
     
   )
