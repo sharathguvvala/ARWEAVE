@@ -13,6 +13,21 @@ export default function Home() {
     initialiseBundlr()
   }
 
+  function onFileChange(e) {
+    const file = e.target.files[0]
+    if (file) {
+      const image = URL.createObjectURL(file)
+      setImage(image)
+      let reader = new FileReader()
+      reader.onload = function () {
+        if (reader.result) {
+          setFile(Buffer.from(reader.result))
+        }
+      }
+      reader.readAsArrayBuffer(file)
+    }
+  }
+
   return (
     
   )
