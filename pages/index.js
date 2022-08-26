@@ -35,6 +35,14 @@ export default function Home() {
 
   }
 
+  async function fundWallet() {
+    if (!amount) return
+    const amountParsed = parseInput(amount)
+    let response = await bundlrInstance.fund(amountParsed)
+    console.log('Wallet funded: ', response)
+    fetchBalance()
+  }
+
   return (
     
   )
