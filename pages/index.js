@@ -28,6 +28,13 @@ export default function Home() {
     }
   }
 
+  async function uploadFile() {    
+    let tx = await bundlrInstance.uploader.upload(file, [{ name: "Content-Type", value: "image/png" }])
+    console.log('tx: ', tx)
+    setURI(`http://arweave.net/${tx.data.id}`)
+
+  }
+
   return (
     
   )
