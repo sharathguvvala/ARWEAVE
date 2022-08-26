@@ -43,6 +43,16 @@ export default function Home() {
     fetchBalance()
   }
 
+  function parseInput (input) {
+    const conv = new BigNumber(input).multipliedBy(bundlrInstance.currencyConfig.base[1])
+    if (conv.isLessThan(1)) {
+      console.log('error: value too small')
+      return
+    } else {
+      return conv
+    }
+  }
+
   return (
     
   )
